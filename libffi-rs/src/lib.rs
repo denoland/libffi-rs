@@ -94,7 +94,7 @@
 /// as the basis for higher-level bindings, but you can see the [C libffi
 /// documentation](http://www.atmark-techno.com/~yashi/libffi.html).
 pub mod raw {
-    pub use libffi_sys::*;
+    pub use deno_libffi_sys::*;
 }
 
 pub mod high;
