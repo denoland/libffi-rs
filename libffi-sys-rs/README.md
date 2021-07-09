@@ -11,11 +11,6 @@ as ordinary C functions. This is an undocumented wrapper, generated
 by bindgen, intended as the basis for higher-level bindings, but you
 can see the [libffi documentation].
 
-If you clone this repository in order to build the library and you do
-not plan to enable the `system` Cargo feature to build against your
-system’s C libffi, then you should do a recursive clone, by default this
-library builds C libffi from a Git submodule.
-
 See [the `libffi` crate] for a higher-level API.
 
 ## Usage
