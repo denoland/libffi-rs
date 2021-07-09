@@ -43,7 +43,7 @@ type Owned<T> = T;
 /// `Type` object describing its layout:
 ///
 /// ```
-/// use libffi::middle::Type;
+/// use deno_libffi::middle::Type;
 ///
 /// let my_struct = Type::structure(vec![
 ///     Type::u64(),

@@ -175,7 +175,7 @@ pub mod types {
 ///
 /// ```
 /// use std::ptr;
-/// use libffi::low::{ffi_type, types, type_tag};
+/// use deno_libffi::low::{ffi_type, types, type_tag};
 ///
 /// let mut elements = unsafe {
 ///     [ &mut types::uint16,
@@ -231,7 +231,7 @@ pub mod type_tag {
 /// # Examples
 ///
 /// ```
-/// use libffi::low::*;
+/// use deno_libffi::low::*;
 ///
 /// let mut args: [*mut ffi_type; 2] = unsafe {
 ///     [ &mut types::sint32,
@@ -318,7 +318,7 @@ pub unsafe fn prep_cif_var(
 ///
 /// ```
 /// use std::os::raw::c_void;
-/// use libffi::low::*;
+/// use deno_libffi::low::*;
 ///
 /// extern "C" fn c_function(a: u64, b: u64) -> u64 { a + b }
 ///
@@ -362,7 +362,7 @@ pub unsafe fn call<R>(cif: *mut ffi_cif, fun: CodePtr, args: *mut *mut c_void) -
 /// # Examples
 ///
 /// ```
-/// use libffi::low::*;
+/// use deno_libffi::low::*;
 ///
 /// let (closure_handle, code_ptr) = closure_alloc();
 /// ```
@@ -386,7 +386,7 @@ pub fn closure_alloc() -> (*mut ffi_closure, CodePtr) {
 /// # Examples
 ///
 /// ```
-/// use libffi::low::*;
+/// use deno_libffi::low::*;
 ///
 /// let (closure_handle, code_ptr) = closure_alloc();
 ///
@@ -461,7 +461,7 @@ pub type RawCallback = unsafe extern "C" fn(
 /// # Examples
 ///
 /// ```
-/// use libffi::low::*;
+/// use deno_libffi::low::*;
 ///
 /// use std::mem;
 /// use std::os::raw::c_void;
@@ -553,7 +553,7 @@ pub unsafe fn prep_closure<U, R>(
 /// # Examples
 ///
 /// ```
-/// use libffi::low::*;
+/// use deno_libffi::low::*;
 ///
 /// use std::mem;
 /// use std::os::raw::c_void;

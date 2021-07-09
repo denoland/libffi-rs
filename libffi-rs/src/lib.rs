@@ -70,7 +70,7 @@
 //! `extern "C" fn(u64, u64) -> u64`.
 //!
 //! ```
-//! use libffi::high::Closure2;
+//! use deno_libffi::high::Closure2;
 //!
 //! let x = 5u64;
 //! let f = |y: u64, z: u64| x + y + z;

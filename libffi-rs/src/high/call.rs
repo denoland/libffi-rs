@@ -10,7 +10,7 @@
 //!     (x * x + y * y).sqrt()
 //! }
 //!
-//! use libffi::ffi_call;
+//! use deno_libffi::ffi_call;
 //!
 //! let result = unsafe { ffi_call!{ hypot(3f32, 4f32) -> f32 } };
 //!
@@ -67,7 +67,7 @@ pub fn arg<T: super::CType>(arg: &T) -> Arg {
 ///     (x * x + y * y).sqrt()
 /// }
 ///
-/// use libffi::high::call::*;
+/// use deno_libffi::high::call::*;
 ///
 /// let result = unsafe {
 ///     call::<f32>(CodePtr(hypot as *mut _), &[arg(&3f32), arg(&4f32)])
@@ -95,7 +95,7 @@ pub unsafe fn call<R: super::CType>(fun: CodePtr, args: &[Arg]) -> R {
 ///     (x * x + y * y).sqrt()
 /// }
 ///
-/// use libffi::ffi_call;
+/// use deno_libffi::ffi_call;
 ///
 /// let result = unsafe { ffi_call!{ hypot(3f32, 4f32) -> f32 } };
 ///

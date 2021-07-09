@@ -24,8 +24,8 @@ use super::types::Type;
 /// use std::mem;
 /// use std::os::raw::c_void;
 ///
-/// use libffi::middle::*;
-/// use libffi::low;
+/// use deno_libffi::middle::*;
+/// use deno_libffi::low;
 ///
 /// unsafe extern "C" fn lambda_callback<F: Fn(u64, u64) -> u64>(
 ///     _cif: &low::ffi_cif,

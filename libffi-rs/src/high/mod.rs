@@ -33,7 +33,7 @@
 //! Rust lambda into a C function pointer.
 //!
 //! ```
-//! use libffi::high::ClosureMut1;
+//! use deno_libffi::high::ClosureMut1;
 //!
 //! let mut x = 0u64;
 //! let mut f = |y: u32| { x += y as u64; x };
@@ -53,7 +53,7 @@
 //! a vector:
 //!
 //! ```
-//! use libffi::high::ClosureOnce3;
+//! use deno_libffi::high::ClosureOnce3;
 //!
 //! let v = vec![1, 2, 3, 4, 5];
 //! let mut f = move |x: usize, y: usize, z: usize| {

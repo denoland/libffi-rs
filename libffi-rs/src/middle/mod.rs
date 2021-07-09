@@ -72,7 +72,7 @@ pub fn arg<T>(r: &T) -> Arg {
 ///     return x + y;
 /// }
 ///
-/// use libffi::middle::*;
+/// use deno_libffi::middle::*;
 ///
 /// let args = vec![Type::f64(), Type::pointer()];
 /// let cif = Cif::new(args.into_iter(), Type::f64());
@@ -202,8 +202,8 @@ impl Cif {
 /// use std::mem;
 /// use std::os::raw::c_void;
 ///
-/// use libffi::middle::*;
-/// use libffi::low;
+/// use deno_libffi::middle::*;
+/// use deno_libffi::low;
 ///
 /// unsafe extern "C" fn lambda_callback<F: Fn(u64, u64) -> u64>(
 ///     _cif: &low::ffi_cif,

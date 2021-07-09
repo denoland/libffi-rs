@@ -1,6 +1,6 @@
 // Example calling out to libc qsort.
 
-use libffi::high::Closure2;
+use deno_libffi::high::Closure2;
 
 mod c {
     use std::os::raw::{c_int, c_void};
