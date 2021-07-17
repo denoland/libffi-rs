@@ -14,7 +14,7 @@ typedef struct cls_struct_5byte {
   unsigned char c;
 } cls_struct_5byte;
 
-static cls_struct_5byte cls_struct_5byte_fn(struct cls_struct_5byte a1,
+cls_struct_5byte cls_struct_5byte_fn(struct cls_struct_5byte a1,
 			    struct cls_struct_5byte a2)
 {
   struct cls_struct_5byte result;
