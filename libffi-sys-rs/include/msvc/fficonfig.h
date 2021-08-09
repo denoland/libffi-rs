@@ -163,7 +163,7 @@
 	STACK_DIRECTION > 0 => grows toward higher addresses
 	STACK_DIRECTION < 0 => grows toward lower addresses
 	STACK_DIRECTION = 0 => direction of growth unknown */
-#define STACK_DIRECTION -1
+/* #define STACK_DIRECTION -1 */
 
 /* Define to 1 if you have the ANSI C header files. */
 #define STDC_HEADERS 1
