@@ -12,7 +12,7 @@
 #define C_ALLOCA 1
 
 /* Define to the flags needed for the .section .eh_frame directive. */
-/* #undef EH_FRAME_FLAGS */
+#define EH_FRAME_FLAGS "a"
 
 /* Define this if you want extra debugging. */
 /* #undef FFI_DEBUG */
