@@ -6,6 +6,7 @@ const BUILD_FILES: &[&str] = &[
     "closures.c",
     "prep_cif.c",
     "raw_api.c",
+    "tramp.c",
     "types.c",
     "x86/ffi.c",
 ];
