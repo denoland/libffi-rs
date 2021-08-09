@@ -122,7 +122,7 @@
 #define HAVE_SYS_TYPES_H 1
 
 /* Define to 1 if you have the <unistd.h> header file. */
-/* #undef HAVE_UNISTD_H */
+#define HAVE_UNISTD_H 1
 
 /* Define to 1 if GNU symbol versioning is used for libatomic. */
 /* #undef LIBFFI_GNU_SYMBOL_VERSIONING */
