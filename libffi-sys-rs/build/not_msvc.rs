@@ -4,8 +4,13 @@ pub fn build_and_link() {
     let out_dir = env::var("OUT_DIR").unwrap();
     let build_dir = Path::new(&out_dir).join("libffi-build");
     let prefix = Path::new(&out_dir).join("libffi-root");
-    let libdir = Path::new(&prefix).join("lib");
-    let libdir64 = Path::new(&prefix).join("lib64");
+
+    let mut libdir = Path::new(&prefix).join("lib");
+
+    let target = std::env::var("TARGET").unwrap();
+    if target.starts_with("i686-") {
+        libdir = Path::new(&prefix).join("lib32");
+    }
 
     // Copy LIBFFI_DIR into build_dir to avoid an unnecessary build
     if let Err(e) = fs::remove_dir_all(&build_dir) {
@@ -35,7 +40,6 @@ pub fn build_and_link() {
     // Cargo linking directives
     println!("cargo:rustc-link-lib=static=ffi");
     println!("cargo:rustc-link-search={}", libdir.display());
-    println!("cargo:rustc-link-search={}", libdir64.display());
 }
 
 pub fn probe_and_link() {
@@ -53,6 +57,11 @@ pub fn configure_libffi(prefix: PathBuf, build_dir: &Path) {
     let target = std::env::var("TARGET").unwrap();
     if target != std::env::var("HOST").unwrap() {
         command.arg(format!("--host={}", target.to_string()));
+    }
+    if target.starts_with("i686-") {
+        command.arg("CFLAGS=-m32");
+        command.arg("CXXFLAGS=-m32");
+        command.arg("LDFLAGS=-m32");
     }
 
     command.current_dir(&build_dir);
