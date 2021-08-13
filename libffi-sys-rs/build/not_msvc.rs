@@ -56,7 +56,15 @@ pub fn configure_libffi(prefix: PathBuf, build_dir: &Path) {
 
     let target = std::env::var("TARGET").unwrap();
     if target != std::env::var("HOST").unwrap() {
-        command.arg(format!("--host={}", target.to_string()));
+        let mut host = target.to_string();
+        if host.starts_with("armv7") {
+            host = host.replace("armv7", "arm");
+        }
+        if target.contains("unknown-") {
+            host = host.replace("unknown-", "");
+        }
+
+        command.arg(format!("--host={}", host));
     }
     if target.starts_with("i686-") {
         command.arg("CFLAGS=-m32");
