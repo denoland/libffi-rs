@@ -1,5 +1,0 @@
-[workspace]
-members = [
-    "libffi-rs",
-    "libffi-sys-rs",
-]
