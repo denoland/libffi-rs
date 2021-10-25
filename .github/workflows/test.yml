@@ -7,7 +7,7 @@ jobs:
       fail-fast: false
       matrix:
         target: [i686-pc-windows-msvc, x86_64-pc-windows-msvc]
-        channel: [1.36.0, stable, beta, nightly]
+        channel: [1.56.0, stable, beta, nightly]
     runs-on: windows-latest
     name: Windows - ${{ matrix.target }} - ${{ matrix.channel }}
     env:
@@ -38,7 +38,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        channel: [1.36.0, stable, beta, nightly]
+        channel: [1.56.0, stable, beta, nightly]
     runs-on: windows-latest
     name: Windows - x86_64-pc-windows-gnu - ${{ matrix.channel }}
     env:
@@ -76,7 +76,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        channel: [1.36.0, stable, beta, nightly]
+        channel: [1.56.0, stable, beta, nightly]
         features: ["--no-default-features", "--features system"]
     runs-on: macos-latest
     name: macOS - ${{ matrix.channel }} ${{ matrix.features }}
@@ -110,7 +110,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        channel: [1.36.0, stable, beta, nightly]
+        channel: [1.56.0, stable, beta, nightly]
         features: ["--no-default-features", "--features system"]
         target:
         - x86_64-unknown-linux-gnu
